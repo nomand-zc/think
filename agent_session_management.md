@@ -131,6 +131,10 @@ session内默认仅保留「最新1-2个完整语义块 + 3~5条零散消息」�
 
 - 块数量≥10个：提供list_blocks工具（新方案新增），Agent先调用工具获取块列表，再筛选检索目标，避免Prompt过长。
 
+### 4. 能力补充
+
+1. 新增history_list工具，支持历史对话翻页获取，入参：page, page_size。输出：List[Message]
+
 
 # 五、落地保障策略
 
