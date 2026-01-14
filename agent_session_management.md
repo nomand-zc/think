@@ -92,12 +92,12 @@
 
 {
   "block_id": "b_20250101_001",  // 块唯一标识（检索用）
-  "todo_id": "todo_001",         // 所属子任务ID（适配DeepAgents TodoList隔离）
+  "session_id": "session_id001",         // 所属子任务ID（适配DeepAgents TodoList隔离）
   "block_type": "tool_call",     // 块类型（tool_call/qa/chat，辅助模型判断场景）
   "keywords": ["读取文件", "data.txt", "store://xxx-id"],  // 核心关键词（含DeepAgents Backend Store关联ID）
   "core_semantic": "读取data.txt筛选2025年数据，结果存储至store://xxx-id",  // 一句话核心语义（≤50字）
   "create_time": "2025-01-01 10:00:00",  // 时间戳（辅助判断新旧）
-  "data_ids": ["store://xxx-id"]  // 关联DeepAgents Backend Store大文本ID（溯源用）
+  "message_ids": ["msg_id1","msg_id2"]  // 关联DeepAgents session中的对话列表中的id
 }
 ```
 
