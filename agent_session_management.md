@@ -99,7 +99,8 @@
 核心目标：为每个语义块生成轻量化元信息，让Agent快速知晓“有哪些块、每个块讲什么”，无需加载完整块内容即可决策是否检索。
 
 - 元信息结构化设计（单条50~100 Token，轻量化无冗余）：
-```json{
+```json
+{
   "block_id": "b_todo001_001",  // 块唯一标识（TodoID+序号）
   "todo_id": "todo001",         // 所属子任务ID（关联检索范围）
   "block_type": "tool_call",     // 块类型（tool_call/qa/chat）
