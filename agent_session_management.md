@@ -24,7 +24,7 @@
 
 |架构层次|核心职责|实现方案（DeepAgents继承/新方案创新）|设计目的|
 |---|---|---|---|
-|底层：DeepAgents核心底座|大文本数据隔离、复杂任务解耦|继承DeepAgents两大核心设计：1. 工具结果卸载：工具调用（如read输出、write输入）的大文本数据存储至session外Backend Store，生成唯一data_id；session内仅保留toolMessage轻量提示（如“结果已写入store://xxx-id”）；2. TodoList任务拆分：复杂任务拆分为子任务列表，每个子任务分配独立SubAgent与独立session，子任务上下文互不干扰。|复用成熟能力，保障大文本隔离与任务解耦，降低落地成本|
+|底层：DeepAgents核心底座|大文本数据隔离、复杂任务解耦|继承DeepAgents两大核心设计：1. 工具结果卸载：工具调用（如websearch）的大文本数据存储至session外Backend Store，生成唯一data_id；session内仅保留toolMessage轻量提示（如“结果已写入store://xxx-id”）；2. TodoList任务拆分：复杂任务拆分为子任务列表，每个子任务分配独立SubAgent与独立session，子任务上下文互不干扰。|复用成熟能力，保障大文本隔离与任务解耦，降低落地成本|
 |上层：新方案创新层|上下文轻量化管理、原始信息无损、自主检索|新方案核心创新设计（替代DeepAgents summary+topN）：1. 语义分块：将子任务内连续对话切割为「语义闭环、时序连续、最小必要」的完整语义块；2. 渐进式披露：session内仅保留「最新1个完整语义块+3-5条零散消息」，不保留完整历史；3. 块粒度检索：构建子任务专属块索引库，Agent通过工具自主检索所需历史语义块；4. 元信息管理：为每个语义块生成轻量化元信息，支撑Agent检索决策。|解决Token膨胀与信息丢失痛点，强化Agent自主性|
 补充说明：架构核心为「继承不改动、优化补短板」——DeepAgents的Backend Store、TodoList、SubAgent等核心模块完全复用，仅替换其上下文压缩模块，确保改造轻量化、兼容性强。
 
