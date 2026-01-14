@@ -108,7 +108,8 @@
   "core_semantic": "调用read工具读取data.txt，结果存储至store://001",  // 一句话核心语义（≤50字）
   "create_time": "2025-01-01 10:00:00",  // 时间戳（辅助判断新旧）
   "data_ids": ["store://001"]  // 关联Backend Store大文本ID（溯源用）
-}```
+}
+```
 
 
 - 元信息传递方式：
