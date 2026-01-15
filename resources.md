@@ -8,7 +8,10 @@
 ## 上下文工程管理
 - [设计方案](https://github.com/nomand-zc/think)
 - [deepagents](https://github.com/langchain-ai/deepagents)
-- 优化：
+- 方案：
+  - 压缩：当对话接近上下文窗口限制时，总结核心内容（保留架构决策、未解决问题等），丢弃冗余信息（如工具原始输出），用摘要重新启动新上下文窗口
+  - 即时上下文检索: 维护轻量级标识符（文件路径、查询、链接等），运行时通过工具动态加载数据，不预先处理全部数据（类似人类按需检索信息）
+  - 混合检索策略: 结合 “预先加载关键数据” 和 “运行时自主探索”，平衡速度与上下文完整性
   - 内容裁剪: 将带有大文本工具的内容卸载（如read工具结果、write工具的参数）。
   - 动态上下文发现: 仅保留高频使用的原子工具以及工具发现工具，将低频工具卸载，通过发现工具按需动态加载 [文档](https://cursor.com/cn/blog/dynamic-context-discovery)
   - 使用程序化调用执行替代step by step的工具调用。[高级工具使用](https://www.anthropic.com/engineering/advanced-tool-use)
