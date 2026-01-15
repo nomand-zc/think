@@ -13,6 +13,10 @@
   - 动态上下文发现: 仅保留高频使用的原子工具以及工具发现工具，将低频工具卸载，通过发现工具按需动态加载 [文档](https://cursor.com/cn/blog/dynamic-context-discovery)
   - 使用程序化调用执行替代step by step的工具调用。[高级工具使用](https://www.anthropic.com/engineering/advanced-tool-use)
   - 使用工具示例来弥补JSON Schema无法表达的使用模式。例如：date参数在JSON Schema中只能指定string类型，不能进一步表达date字段的类型为“2024-11-06”、“2024年11月6日”还是“2024-11-06T00:00:00Z”？
+  - 子代理模式：通过子代理，隔离上下文信息。缩减单个代理上下文占用大小。核心在于如何贡献信息：
+    - 接收独立子任务，不共享父代理上下文，仅返回子代理的任务结果（类似agentTool）
+    - 共享父代理的上下文，仅让子代理的任务结论对父代理可见
+    - 多个子代理之间不共享信息
 
 ## 技能仓库
 - [本地化](https://github.com/ComposioHQ/awesome-claude-skills/blob/master/raffle-winner-picker/SKILL.md)
