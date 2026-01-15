@@ -2,8 +2,8 @@
 ## Prompt caching
 基于prompt cache能力，提升相同前缀内容的处理速度，节省token。
 
-- [Openai](https://platform.openai.com/docs/guides/prompt-caching)
-- [anthropic](https://platform.claude.com/docs/zh-CN/build-with-claude/prompt-caching)
+- [Openai promt cache介绍](https://platform.openai.com/docs/guides/prompt-caching)
+- [anthropic promt cache介绍](https://platform.claude.com/docs/zh-CN/build-with-claude/prompt-caching)
 
 ## 上下文工程管理
 - [设计方案](https://github.com/nomand-zc/think)
