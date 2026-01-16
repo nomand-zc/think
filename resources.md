@@ -6,7 +6,7 @@
 - [anthropic promt cache介绍](https://platform.claude.com/docs/zh-CN/build-with-claude/prompt-caching)
 
 ## 上下文工程管理
-- [设计方案](https://github.com/nomand-zc/think)
+- [设计方案](https://github.com/nomand-zc/think/blob/main/agent%E5%8E%86%E5%8F%B2%E5%AF%B9%E8%AF%9D%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88%E8%AE%BE%E8%AE%A1.md)
 - [deepagents](https://github.com/langchain-ai/deepagents)
 - 方案：
   - 压缩：当对话接近上下文窗口限制时，总结核心内容（保留架构决策、未解决问题等），丢弃冗余信息（如工具原始输出），用摘要重新启动新上下文窗口
