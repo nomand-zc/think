@@ -24,6 +24,7 @@
 ## 技能仓库
 - [本地化](https://github.com/ComposioHQ/awesome-claude-skills/blob/master/raffle-winner-picker/SKILL.md)
 - [anthropic](https://github.com/anthropics/skills)
+- [skill0](https://skill0.atypica.ai)
 
 ## coding agent
 - [crush](https://github.com/charmbracelet/crush)
